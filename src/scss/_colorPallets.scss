@@ -1,0 +1,27 @@
+$bodyBackgroundColor: #223647;
+$deepDarkBackground: #0c0c0c;
+$orangeColor: #ff6700;
+$basicFontColor: white;
+
+$borderLine: 1px solid $orangeColor;
+
+@mixin boxTheme {
+    padding: 30px;
+    background: linear-gradient(to right top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.25));
+    box-shadow: 0 0 10px 3px black;
+}
+
+@mixin borderTopBottom {
+    border-top: $borderLine;
+    border-bottom: $borderLine;
+}
+
+@mixin columnBackgroundBasic {
+    padding: 20px;
+    background-color: $deepDarkBackground;
+}
+
+@mixin radius_borderline_shadow {
+    border-radius: 0 15px 0 15px;
+    box-shadow: 5px 5px $orangeColor;
+}

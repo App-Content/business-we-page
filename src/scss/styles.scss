@@ -1,2 +1,11 @@
-// Import all of Bootstrap's CSS
+@use "./colorPallets" as cp;
+@use "./fonts" as f;
+@use "./headerSection";
+
 @import "~bootstrap/scss/bootstrap";
+
+body {
+    background-color: cp.$bodyBackgroundColor;
+    font-family: f.$font;
+    color: cp.$basicFontColor;
+}

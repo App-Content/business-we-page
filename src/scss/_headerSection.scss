@@ -1,0 +1,57 @@
+@use "./colorPallets" as cp;
+@use "./displayModes" as d;
+
+.headerRow {
+    @include cp.boxTheme;
+    border-bottom: cp.$borderLine;
+    border-radius: 0 0 20px 20px;
+}
+
+.headerLeft__contentArea,
+.headerRight__contentArea {
+    height: 150px;
+    @include d.displayFlex;
+}
+
+@media (min-width: 992px) {
+    .headerLeft__contentArea {
+        border-right: cp.$borderLine;
+    }
+
+    .headerRight__contentArea {
+        border-left: cp.$borderLine;
+    }
+}
+
+.headerLeft__contentArea--content {
+    color: cp.$orangeColor;
+    font-size: 55px;
+    font-weight: 700;
+}
+
+.headerRight__contentArea--contentSecondary {
+    font-size: 22px;
+}
+
+.call {
+    text-decoration: none;
+    color: cp.$basicFontColor;
+
+    @media (max-width: 768px) {
+        color: cp.$orangeColor;
+    }
+
+    &:hover {
+        color: cp.$orangeColor;
+    }
+}
+
+.headerAppendix {
+    padding: 0 50px 0 50px;
+}
+
+.headerAppendix__graphics {
+    height: 50px;
+    background-image: url("../pictures/headerAppendix.jpg");
+    border-radius: 0 0 8px 8px;
+}
