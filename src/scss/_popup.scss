@@ -1,0 +1,31 @@
+@use "./colorPallets" as cp;
+
+div.popup {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: cp.$deepDarkBackground;
+    z-index: 1;
+    width: 85%;
+    height: 95%;
+}
+
+.mPopupTitle {
+    font-size: 1.7rem;
+    color: cp.$orangeColor;
+}
+
+.mPopupBody__listArea {
+    padding: 50px;
+}
+
+.mPopupBody__listArea-item {
+    border-bottom: cp.$borderLine;
+    margin-top: 8px;
+
+    @media (max-width: 992px) {
+        font-size: 1.2rem;
+    }
+}

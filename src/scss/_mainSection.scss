@@ -1,0 +1,58 @@
+@use "./colorPallets" as cp;
+@use "./displayModes" as d;
+@use "./popup";
+
+
+.section {
+    @include cp.boxTheme;
+    border-radius: 20px;
+    @include cp.borderTopBottom;
+}
+
+.sectionLeft__buttonArea,
+.sectionRight__mapArea {
+    @include cp.columnBackgroundBasic;
+    @include d.displayFlex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    height: 100%;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .sectionLeft__buttonArea {
+        border-right: cp.$borderLine;
+    }
+
+    .sectionRight__mapArea {
+        border-left: cp.$borderLine;
+    }
+}
+
+.sectionLeft__buttonArea--button {
+    width: 80%;
+    padding: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background: linear-gradient(to right top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.25));
+    color: cp.$basicFontColor;
+    border: cp.$borderLine;
+    @include cp.radius_borderline_shadow;
+
+    &:hover {
+        background-color: cp.$orangeColor;
+        transform: translate(3%, 3%);
+    }
+}
+
+.sectionLeft__buttonArea--button:active {
+    background-color: cp.$bodyBackgroundColor;
+}
+
+.sectionRight__mapArea--map {
+    width: 100%;
+    height: 600;
+    border: 0;
+    margin-top: 30px;
+    @include cp.radius_borderline_shadow;
+}

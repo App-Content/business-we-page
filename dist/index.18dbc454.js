@@ -532,10 +532,10 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"1SICI":[function(require,module,exports) {
-// Import all of Bootstrap's JS
 var _bootstrap = require("bootstrap");
+var _buttons = require("./buttons");
 
-},{"bootstrap":"h36JB"}],"h36JB":[function(require,module,exports) {
+},{"bootstrap":"h36JB","./buttons":"4cqvf"}],"h36JB":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Alert", ()=>Alert);
@@ -6261,6 +6261,41 @@ var createPopper = /*#__PURE__*/ (0, _createPopperJs.popperGenerator)({
     defaultModifiers: defaultModifiers
 }); // eslint-disable-next-line import/no-unused-modules
 
-},{"./createPopper.js":"cHuNp","./modifiers/eventListeners.js":"hBKsL","./modifiers/popperOffsets.js":"6I679","./modifiers/computeStyles.js":"gDlm2","./modifiers/applyStyles.js":"4iMn4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["jQVXF","1SICI"], "1SICI", "parcelRequire9ce3")
+},{"./createPopper.js":"cHuNp","./modifiers/eventListeners.js":"hBKsL","./modifiers/popperOffsets.js":"6I679","./modifiers/computeStyles.js":"gDlm2","./modifiers/applyStyles.js":"4iMn4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4cqvf":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "sectionButtonTexts", ()=>sectionButtonTexts);
+parcelHelpers.export(exports, "buttonInitialLoad", ()=>buttonInitialLoad);
+const sectionButtonTexts = [
+    "Diagnostyka komputerowa",
+    "Programowanie elektroniki",
+    "Wymiana moduł\xf3w i podzespoł\xf3w elektronicznych",
+    "Naprawa element\xf3w elektronicznych",
+    "Aktualizacje",
+    "Elektroniczne części samochodowe", 
+];
+const buttonArea = document.getElementById("root1");
+const attributes = {
+    idNumber: 1,
+    onclick: "serviceSpreadList(this)"
+};
+setAttributes = (element, attributes)=>{
+    Object.keys(attributes).forEach((attr)=>{
+        element.setAttribute(attr, attributes[attr]);
+    });
+};
+const buttonInitialLoad = function(btn) {
+    sectionButtonTexts.map((singleButtonText)=>{
+        btn = document.createElement("button");
+        setAttributes(btn, attributes);
+        attributes.idNumber++;
+        btn.innerHTML = singleButtonText;
+        btn.classList.add("sectionLeft__buttonArea--button");
+        buttonArea.appendChild(btn);
+    });
+};
+buttonInitialLoad();
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["jQVXF","1SICI"], "1SICI", "parcelRequire9ce3")
 
 //# sourceMappingURL=index.18dbc454.js.map

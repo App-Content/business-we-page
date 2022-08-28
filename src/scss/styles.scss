@@ -1,6 +1,10 @@
 @use "./colorPallets" as cp;
 @use "./fonts" as f;
 @use "./headerSection";
+@use "./messages";
+@use "./mainSection";
+
+
 
 @import "~bootstrap/scss/bootstrap";
 
