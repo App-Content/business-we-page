@@ -1,0 +1,35 @@
+{
+  "name": "business-web-page",
+  "version": "1.0.0",
+  "description": "The project updates the code of given business web page made by me from scratch on demand of the client.",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel serve src/index.html --public-url / --dist-dir dist",
+    "build": "parcel build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/App-Content/business-web-page.git"
+  },
+  "keywords": [
+    "auto",
+    "elektronika",
+    "opel",
+    "chevrolet"
+  ],
+  "author": "App Content Krzysztof Feret",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/App-Content/business-web-page/issues"
+  },
+  "homepage": "https://github.com/App-Content/business-web-page#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0",
+    "parcel": "^2.7.0"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.0"
+  }
+}
