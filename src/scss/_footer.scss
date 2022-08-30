@@ -1,0 +1,8 @@
+@use "./colorPallets" as cp;
+
+.footer {
+    @include cp.boxTheme;
+    font-size: 1.2rem;
+    border-radius: 15px 15px 0 0;
+    border-top: cp.$borderLine;
+}

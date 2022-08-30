@@ -5,10 +5,16 @@
     @include cp.boxTheme;
     @include cp.borderTopBottom;
     border-radius: 20px;
+    margin-bottom: 140px;
 }
 
 .fbAndGallery__position {
     position: relative;
+    min-height: 800px;
+
+    @media (max-width: 768px) {
+        min-height: 500;
+    }
 }
 
 
@@ -61,8 +67,11 @@ iframe.fbArea__callAndFbScreen__fbPlugin {
     top: 30px;
     left: 50%;
     transform: translateX(-50%);
-
 }
+
+// .carousel-item {
+//     margin-bottom: 100px;
+// }
 
 .carouselClosingButton {
     position: absolute;
