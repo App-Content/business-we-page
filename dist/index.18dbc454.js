@@ -534,8 +534,9 @@ function hmrAcceptRun(bundle, id) {
 },{}],"1SICI":[function(require,module,exports) {
 var _bootstrap = require("bootstrap");
 var _buttons = require("./buttons");
+var _carouselHandle = require("./carouselHandle");
 
-},{"bootstrap":"h36JB","./buttons":"4cqvf"}],"h36JB":[function(require,module,exports) {
+},{"bootstrap":"h36JB","./buttons":"4cqvf","./carouselHandle":"3einZ"}],"h36JB":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Alert", ()=>Alert);
@@ -6266,6 +6267,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "sectionButtonTexts", ()=>sectionButtonTexts);
 parcelHelpers.export(exports, "buttonInitialLoad", ()=>buttonInitialLoad);
+var _serviceList = require("./serviceList");
 const sectionButtonTexts = [
     "Diagnostyka komputerowa",
     "Programowanie elektroniki",
@@ -6295,6 +6297,134 @@ const buttonInitialLoad = function(btn) {
     });
 };
 buttonInitialLoad();
+
+},{"./serviceList":"1sMj7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1sMj7":[function(require,module,exports) {
+var _buttons = require("./buttons");
+const serviceArrow = [
+    {
+        id: 1,
+        services: [
+            "Kompleksowa diagnostyka, odczyt, analiza kod\xf3w usterek, kodowanie",
+            "Odczyt kod\xf3w Carpass - PIN",
+            "Podgląd parametr\xf3w w czasie rzeczywistym",
+            "Testy element\xf3w wykonawczych", 
+        ]
+    },
+    {
+        id: 2,
+        services: [
+            "Programowanie moduł\xf3w",
+            "Programowanie sterownik\xf3w silnika",
+            "Programowanie moduł\xf3w BCM",
+            "Programowanie moduł\xf3w CIM",
+            "Programowanie kluczy wraz z docięciem grotu",
+            "Programowanie, adapatacja podzespoł\xf3w silnika po wymianie, np. (czujnik DPF, SCV, wtryskiwacze)",
+            "Kasowanie CRASH DATA", 
+        ]
+    },
+    {
+        id: 3,
+        services: [
+            "Wymiana i programowanie moduł\xf3w CIM (przełącznik zespolony kolumny kierownicy)",
+            "Wymiana i programowanie sterownik\xf3w silnika",
+            "Wymiana i programowanie moduł\xf3w BCM (moduł komfortu nadwozia)",
+            "Wymiana i kalibracja czujnik\xf3w kąta skrętu",
+            "Wymiana pomp wspomagania oraz ich programowanie i konfiguracja",
+            "Montaż i programowanie tempomat\xf3w", 
+        ]
+    },
+    {
+        id: 4,
+        services: [
+            "Naprawa paneli nawiew\xf3w (Vectra C, Signum)",
+            "Naprawa kluczyk\xf3w",
+            "Naprawa licznik\xf3w",
+            "Naprawa podświetlenia",
+            "Naprawa wyświetlaczy", 
+        ]
+    },
+    {
+        id: 5,
+        services: [
+            "Aktualizacje moduł\xf3w i sterownik\xf3w",
+            "Aktualizacje i programowanie serwisowe SPS",
+            "Aktualizacje softu w radiach CD70/DVD90, montaż AUX",
+            "Aktualizacje softu wyświetlacza",
+            "Aktualizacje softu modułu BCM", 
+        ]
+    },
+    {
+        id: 6,
+        services: [
+            "Sprzedajemy r\xf3wnież sprawdzone elektroniczne części samochodowe, dzięki temu w większości przypadk\xf3w posiadamy na miejscu najbardziej wrażliwe na uszkodzenia moduły, przełączniki itp.",
+            "Kliknij tu i sprawdź naszą ofertę części na Allegro!", 
+        ]
+    }, 
+];
+const popup = document.querySelector("div.popup");
+const mPopupTitle = document.querySelector(".mPopupTitle");
+const serviceLIstArea = document.querySelector(".mPopupBody__listArea");
+const closingButton = document.querySelector(".closingButton");
+serviceSpreadList = (btn)=>{
+    serviceArrow.map((serviceArrowItem)=>{
+        const serviceButtonId = btn.getAttribute("idNumber");
+        if (serviceButtonId == serviceArrowItem.id) {
+            mPopupTitle.innerHTML = `${btn.innerHTML}:`;
+            serviceArrowItem.services.forEach((service)=>{
+                const serviceLIstAreaItem = document.createElement("li");
+                serviceLIstAreaItem.innerHTML = service;
+                serviceLIstArea.appendChild(serviceLIstAreaItem);
+                serviceLIstAreaItem.classList.add("mPopupBody__listArea-item");
+                popup.style.display = "block";
+            });
+        }
+    });
+};
+const closeList = ()=>{
+    serviceLIstArea.innerHTML = "";
+    popup.style.display = "none";
+};
+closingButton.addEventListener("click", closeList);
+
+},{"./buttons":"4cqvf"}],"3einZ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "launchCarousel", ()=>launchCarousel);
+parcelHelpers.export(exports, "closeCarousel", ()=>closeCarousel);
+const buttons = [
+    document.querySelector(".galleryArea__triggerButton"),
+    document.querySelector(".carouselClosingButton"), 
+];
+const toggledClasses = [
+    {
+        domItem: document.querySelector("#carouselExampleControls"),
+        itemClass: "invisible"
+    },
+    {
+        domItem: document.querySelector(".fbAndGallery"),
+        itemClass: "fbAndGallery"
+    }, 
+];
+const toggledColumns = [
+    document.querySelector(".galleryArea"),
+    document.querySelector(".fbArea"), 
+];
+const launchCarousel = buttons[0].addEventListener("click", ()=>{
+    toggledClasses.map((toggledClass)=>{
+        toggledClass.domItem.classList.remove(toggledClass.itemClass);
+    });
+    toggledColumns.map((toggledColumn)=>{
+        toggledColumn.style.display = "none";
+    });
+});
+const closeCarousel = buttons[1].addEventListener("click", ()=>{
+    toggledClasses.map((toggledClass)=>{
+        toggledClass.domItem.classList.add(toggledClass.itemClass);
+    });
+    toggledColumns.map((toggledColumn)=>{
+        toggledColumn.style.display = "flex";
+    });
+});
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["jQVXF","1SICI"], "1SICI", "parcelRequire9ce3")
 

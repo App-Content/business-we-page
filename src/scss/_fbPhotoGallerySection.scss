@@ -1,0 +1,78 @@
+@use "./colorPallets" as cp;
+@use "./displayModes" as d;
+
+.fbAndGallery {
+    @include cp.boxTheme;
+    @include cp.borderTopBottom;
+    border-radius: 20px;
+}
+
+.fbAndGallery__position {
+    position: relative;
+}
+
+
+.galleryArea,
+.fbArea {
+    @include d.displayFlex;
+    flex-direction: column;
+    padding: 20px;
+
+    .img-thumbnail {
+        display: block;
+
+        &:nth-child(2) {
+            margin-top: 5px;
+        }
+    }
+}
+
+.galleryArea {
+    position: relative;
+}
+
+.galleryArea__triggerButton {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 200px;
+    height: 200px;
+    border: none;
+    border-radius: 50%;
+    color: cp.$basicFontColor;
+    background-color: cp.$orangeColor;
+    box-shadow: 0 0 10px 3px black;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+iframe.fbArea__callAndFbScreen__fbPlugin {
+    margin-top: 30px;
+    border-radius: 8px;
+}
+
+#carouselExampleControls {
+    // display: none;
+    position: absolute;
+    z-index: 2;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.carouselClosingButton {
+    position: absolute;
+    z-index: 3;
+    width: 40px;
+    height: 40px;
+    bottom: 0;
+    right: 5vw;
+    background-color: cp.$orangeColor;
+    color: cp.$basicFontColor;
+    border: none;
+    border-radius: 50%;
+}

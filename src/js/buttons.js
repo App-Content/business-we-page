@@ -1,4 +1,4 @@
-// import { serviceArrow } from "./serviceList";
+import { serviceSpreadList } from "./serviceList";
 
 export const sectionButtonTexts = [
   "Diagnostyka komputerowa",
