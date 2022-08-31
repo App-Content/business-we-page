@@ -62,7 +62,7 @@ const serviceArrow = [
     id: 6,
     services: [
       "Sprzedajemy również sprawdzone elektroniczne części samochodowe, dzięki temu w większości przypadków posiadamy na miejscu najbardziej wrażliwe na uszkodzenia moduły, przełączniki itp.",
-      "Kliknij tu i sprawdź naszą ofertę części na Allegro!",
+      "<a href='https://allegro.pl/uzytkownik/Crazy383/' target='_blank' style='text-decoration: none; color: #ff6700;'>Kliknij tu i sprawdź naszą ofertę części na Allegro!</a>",
     ],
   },
 ];
@@ -86,6 +86,7 @@ serviceSpreadList = (btn) => {
       });
     }
   });
+  window.scrollTo(0, 450);
 };
 
 const closeList = () => {

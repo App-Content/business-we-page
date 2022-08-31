@@ -535,6 +535,7 @@ function hmrAcceptRun(bundle, id) {
 var _bootstrap = require("bootstrap");
 var _buttons = require("./buttons");
 var _carouselHandle = require("./carouselHandle");
+fetch("https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fautoelectrogm&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId").then((result)=>console.log(result));
 
 },{"bootstrap":"h36JB","./buttons":"4cqvf","./carouselHandle":"3einZ"}],"h36JB":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -6357,7 +6358,7 @@ const serviceArrow = [
         id: 6,
         services: [
             "Sprzedajemy r\xf3wnież sprawdzone elektroniczne części samochodowe, dzięki temu w większości przypadk\xf3w posiadamy na miejscu najbardziej wrażliwe na uszkodzenia moduły, przełączniki itp.",
-            "Kliknij tu i sprawdź naszą ofertę części na Allegro!", 
+            "<a href='https://allegro.pl/uzytkownik/Crazy383/' target='_blank' style='text-decoration: none; color: #ff6700;'>Kliknij tu i sprawdź naszą ofertę części na Allegro!</a>", 
         ]
     }, 
 ];
@@ -6379,6 +6380,7 @@ serviceSpreadList = (btn)=>{
             });
         }
     });
+    window.scrollTo(0, 450);
 };
 const closeList = ()=>{
     serviceLIstArea.innerHTML = "";
@@ -6409,18 +6411,29 @@ const toggledColumns = [
     document.querySelector(".galleryArea"),
     document.querySelector(".fbArea"), 
 ];
+class ToggleClass {
+    constructor(param){
+        this.param = param;
+    }
+    getResult() {
+        if (this.param === "add") toggledClasses.map((toggledClass)=>{
+            toggledClass.domItem.classList.add(toggledClass.itemClass);
+        });
+        else if (this.param === "remove") toggledClasses.map((toggledClass)=>{
+            toggledClass.domItem.classList.remove(toggledClass.itemClass);
+        });
+    }
+}
 const launchCarousel = buttons[0].addEventListener("click", ()=>{
-    toggledClasses.map((toggledClass)=>{
-        toggledClass.domItem.classList.remove(toggledClass.itemClass);
-    });
+    const removeInvisibleClass = new ToggleClass("remove");
+    removeInvisibleClass.getResult();
     toggledColumns.map((toggledColumn)=>{
         toggledColumn.style.display = "none";
     });
 });
 const closeCarousel = buttons[1].addEventListener("click", ()=>{
-    toggledClasses.map((toggledClass)=>{
-        toggledClass.domItem.classList.add(toggledClass.itemClass);
-    });
+    const addInvisibleClass = new ToggleClass("add");
+    addInvisibleClass.getResult();
     toggledColumns.map((toggledColumn)=>{
         toggledColumn.style.display = "flex";
     });

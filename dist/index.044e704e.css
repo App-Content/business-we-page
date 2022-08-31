@@ -215,7 +215,7 @@ div.popup {
   box-shadow: 0 0 10px 3px #000;
 }
 
-iframe.fbArea__callAndFbScreen__fbPlugin {
+.fbArea__callAndFbScreen__fbPlugin {
   border-radius: 8px;
   margin-top: 30px;
 }
