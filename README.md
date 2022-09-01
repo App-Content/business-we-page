@@ -17,13 +17,13 @@ Wersja developerska projektu w tym repozytorium nie zawiera wymaganych dependenc
 
 
 ## Project Brief
-The project updates the code of the given business web page made by me from scratch on demand of my client. The project follows client's expectations in terms of the page content and color pallet. 
+The project updates the code of the given business web page made by me from scratch on demand of my client. The project follows the client's expectations in terms of the page content and color pallet. 
 
 ## Applied technologies
 The choice of applied technologies has been determined by:
-1. The limited scope of the project with no must to use extensive boilerplates),
+1. The limited scope of the project with no must to use extensive boilerplates,
 2. The ability to support daily code writing by the related tools,
-3. The ability to make the code clear, as well as easy to maintain and develop (if necessary).
+3. The ability to make the code clear, as well make it easy to maintain and develop (if necessary).
 
 This is why I have used:
 HTML, SCSS, Bootstrap, Parcel, pure JS incl. conditional operations, arrows, classes and objets.
