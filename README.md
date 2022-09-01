@@ -1,7 +1,7 @@
 # The example of business-web-page
 
 ## Krótki opis projektu
-Projekt aktualizuje kod strony biznesowej, przygotowanej przeze mnie od początku, na zamówienie klienta i oparciu o jego wymagania w zakresie treści oraz kolorystyki.
+Projekt aktualizuje kod strony biznesowej, przygotowanej przeze mnie od początku, na zamówienie klienta i w oparciu o jego wymagania w zakresie treści oraz kolorystyki.
 
 ## Zastosowane technologie
 Na wybór zastosowanych technologii miały wpływ:
