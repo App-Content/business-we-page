@@ -1,7 +1,7 @@
 # The example of business-web-page
 
 ## Krótki opis projektu
-Projekt aktualizuje kod strony biznesowej, przygotowanej przeze mnie od początku, na zamówienie klienta i w oparciu o jego wymagania w zakresie treści oraz kolorystyki.
+Projekt aktualizuje kod strony biznesowej, przygotowanej przeze mnie od początku, na zamówienie klienta i w oparciu o jego wymagania w zakresie treści oraz kolorystyki. Strona działa pod adresem: https://electrogm.pl/
 
 ## Zastosowane technologie
 Na wybór zastosowanych technologii miały wpływ:
@@ -17,7 +17,7 @@ Wersja developerska projektu w tym repozytorium nie zawiera wymaganych dependenc
 
 
 ## Project Brief
-The project updates the code of the given business web page made by me from scratch on demand of my client. The project follows the client's expectations in terms of the page content and color pallet. 
+The project updates the code of the given business web page made by me from scratch on demand of my client. The project follows the client's expectations in terms of the page content and color pallet. The page works on: https://electrogm.pl/
 
 ## Applied technologies
 The choice of applied technologies has been determined by:
